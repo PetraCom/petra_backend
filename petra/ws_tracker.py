@@ -18,8 +18,8 @@ def get_pet_id_from_path(path):
 
 
 start_server = websockets.serve(send_data,
-                                config.WS_SERVER_HOST,
-                                config.WS_SERVER_PORT)
+                                config.WS_PETRA_SERVER_HOST,
+                                config.WS_PETRA_SERVER_PORT)
 
 
 if __name__ == '__main__':

@@ -8,7 +8,7 @@ from domain.entities import dataset as dataset
 
 async def send_data(ws, path):
     data = json.dumps({'status': 'Success',
-                       'raw': dataset.dataset})
+                       'raw': dataset.get_dataset()})
     await ws.send(data)
 
 

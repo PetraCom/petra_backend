@@ -16,4 +16,4 @@ async def get_data(pet_id):
 
 if __name__ == '__main__':
     print('Start client ...')
-    asyncio.run(get_data(0))
+    asyncio.run(get_data('df096812-afb4-4915-8cb4-a80a62e6939a'))

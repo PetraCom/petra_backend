@@ -1,5 +1,6 @@
 import asyncio
 import websockets
+import json
 
 from data.repositories import repository as repository
 import config
@@ -11,7 +12,8 @@ async def get_data():
             await ws.send('get_data')
             data = await ws.recv()
             rep = await repository.Repository.create(config.REDIS_URI)
-            await rep.add_data(data)
+            raw_data = json.loads(data)['raw']
+            await rep.add_data(json.dumps(raw_data))
             await asyncio.sleep(1)
 
 
